@@ -27,5 +27,5 @@ console.log(napoleonSecond);
 //funzione che genera un numero da 1 a 100 
 
 function numberOneToUndred() {
-    Math.floor(Math.random() * 100) + 1;
+    return Math.floor(Math.random() * 100) + 1;
 }
