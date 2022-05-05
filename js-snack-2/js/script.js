@@ -4,14 +4,13 @@
 numberEmpty = [];
 
 let sum = 0;
-let userNumber = "";
-while (sum <= 50) {
-    userNumber = parseInt(prompt("inserisci un numero"));
+
+while (sum < 50) {
+    const userNumber = parseInt(prompt("inserisci un numero"));
     sum += userNumber;
-    if (sum <= 50) {
+    if (sum < 50) {
         numberEmpty.push(userNumber);
     }
 }
 
-console.log(userNumber);
-console.log(numberEmpty);
+console.log(userNumber, sum);
