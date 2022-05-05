@@ -4,28 +4,24 @@ const napoleon = [1, 2, 3, 4, 5, 6];
 const napoleonSecond = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 let bestArray
+let shortArray
 if (napoleon.length > napoleonSecond.length) {
-    bestArray = "napoleon è l'array più lungo";
-    do {
-        napoleonSecond.push(numberOneToUndred());
-    } while (napoleon.length > napoleonSecond.length);
-} else if (napoleon.length < napoleonSecond.length) {
-    bestArray = "napoleonSecond è l'array più lungo";
-    do {
-        napoleon.push(numberOneToUndred());
-    } while (napoleon.length < napoleonSecond.length);
+    shortArray = napoleonSecond;
 } else {
-    bestArray = "gli array sono della medesima lunghezza";
+    shortArray = napoleon;
 }
 
+while (napoleon.length !== napoleonSecond.length) {
+    const rndNumber = getRndInteger(1, 100);
+    shortArray.push(rndNumber);
+}
 
-console.log(bestArray);
+console.log(napoleon, napoleonSecond);
 
-console.log(napoleon);
-console.log(napoleonSecond);
 
-//funzione che genera un numero da 1 a 100 
 
-function numberOneToUndred() {
-    return Math.floor(Math.random() * 100) + 1;
+//funzione che genera un numero casuale
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 }
